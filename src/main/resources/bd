@@ -1,0 +1,50 @@
+-- Crear base de datos
+CREATE DATABASE IF NOT EXISTS CiberMatchIOS CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE CiberMatchIOS;
+
+-- Tabla: pelicula
+CREATE TABLE IF NOT EXISTS movie (
+    idPelicula INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    originalTitle VARCHAR(255),
+    originalLanguage VARCHAR(50),
+    overview TEXT,
+    posterPath VARCHAR(255),
+    backdropPath VARCHAR(255),
+    genreIds TEXT,
+    popularity DOUBLE,
+    adult BOOLEAN,
+    video BOOLEAN,
+    voteAverage DOUBLE,
+    voteCount INT,
+    releaseDate DATE
+);
+CREATE TABLE pelicula_genero (
+    id_pelicula INT NOT NULL,
+    genre_id INT NOT NULL
+);
+
+USE CiberMatchIOS;
+
+INSERT INTO  movie (idPelicula, title, originalTitle, originalLanguage, overview, posterPath, backdropPath, genreIds, popularity, adult, video, voteAverage, voteCount, releaseDate)
+VALUES
+(1233069, 'Exterritorial', 'Exterritorial', 'de', 'When her son vanishes inside a US consulate, ex-special forces soldier Sara does everything in her power to find him — and uncovers a dark conspiracy.', '/jM2uqCZNKbiyStyzXOERpMqAbdx.jpg', '/ybBIIzDL1B9yH8OVFav81JTZmoN.jpg', '53,28', 723.7982, false, false, 6.779, 179, '2025-04-29'),
+(1197306, 'A Working Man', 'A Working Man', 'en', 'Levon Cade left behind a decorated military career in the black ops to live a simple life working construction. But when his boss\'s daughter, who is like family to him, is taken by human traffickers, his search to bring her home uncovers a world of corruption far greater than he ever could have imagined.', '/6FRFIogh3zFnVWn7Z6zcYnIbRcX.jpg', '/fTrQsdMS2MUw00RnzH0r3JWHhts.jpg', '28,80,53', 482.7613, false, false, 6.505, 576, '2025-03-26'),
+(986056, 'Thunderbolts*', 'Thunderbolts*', 'en', 'After finding themselves ensnared in a death trap, seven disillusioned castoffs must embark on a dangerous mission that will force them to confront the darkest corners of their pasts.', '/m9EtP1Yrzv6v7dMaC9mRaGhd1um.jpg', '/rthMuZfFv4fqEU4JVbgSW9wQ8rs.jpg', '28,12,878', 427.329, false, false, 7.576, 491, '2025-04-30'),
+(668489, 'Havoc', 'Havoc', 'en', 'When a drug heist swerves lethally out of control, a jaded cop fights his way through a corrupt city\'s criminal underworld to save a politician\'s son.', '/r46leE6PSzLR3pnVzaxx5Q30yUF.jpg', '/44YfHklKam8COMUxDZop2Lnp0CS.jpg', '28,80,53', 362.7559, false, false, 6.576, 515, '2025-04-24'),
+(950387, 'A Minecraft Movie', 'A Minecraft Movie', 'en', 'Four misfits find themselves struggling with ordinary problems when they are suddenly pulled through a mysterious portal into the Overworld: a bizarre, cubic wonderland that thrives on imagination. To get back home, they\'ll have to master this world while embarking on a magical quest with an unexpected, expert crafter, Steve.', '/iPPTGh2OXuIv6d7cwuoPkw8govp.jpg', '/2Nti3gYAX513wvhp8IiLL6ZDyOm.jpg', '10751,35,12,14', 360.402, false, false, 6.19, 823, '2025-03-31'),
+(37135, 'Tarzan', 'Tarzan', 'en', 'Tarzan was a small orphan who was raised by an ape named Kala since he was a child. He believed that this was his family, but on an expedition Jane Porter is rescued by Tarzan. He then finds out that he\'s human. Now Tarzan must make the decision as to which family he should belong to...', '/bTvHlcqiOjGa3lFtbrTLTM3zasY.jpg', '/86z1Yrwj7yN1xehSa0gIwHnR7xl.jpg', '10751,12,16,18', 319.0512, false, false, 7.4, 6919, '1999-06-18'),
+(710258, 'Rust', 'Rust', 'en', 'Infamous outlaw Harland Rust breaks his estranged grandson Lucas out of prison, after Lucas is convicted to hang for an accidental murder. The two must outrun legendary U.S Marshal Wood Helm and bounty hunter Fenton "Preacher" Lang who are hot on their tails. Deeply buried secrets rise from the ashes and an unexpected familial bond begins to form as the mismatched duo tries to survive the merciless American Frontier.', '/tbJ3RkA2s6X5qrBzrYHYTxvDBui.jpg', '/12tEzU0bNYKIjXXEwI5abuOotHF.jpg', '37', 316.6083, false, false, 6.458, 24, '2025-05-01'),
+(1153714, 'Death of a Unicorn', 'Death of a Unicorn', 'en', 'A father and daughter accidentally hit and kill a unicorn while en route to a weekend retreat, where his billionaire boss seeks to exploit the creature’s miraculous curative properties.', '/lXR32JepFwD1UHkplWqtBP1K79z.jpg', '/eDBZN0TbWkxoAB0qIDFagVcPPTN.jpg', '27,14,35,12', 280.6884, false, false, 6.3, 157, '2025-03-27'),
+(1225915, 'Jewel Thief: The Heist Begins', 'Jewel Thief: The Heist Begins', 'hi', 'In this high-octane battle of wits and wills, ingenious con artist Rehan devises a diamond heist while trying to outsmart Rajan, his sadistic adversary.', '/eujLbO0kf1eqWC8XpHUJdtAVW2J.jpg', '/8eifdha9GQeZAkexgtD45546XKx.jpg', '28,53', 278.4304, false, false, 6.6, 31, '2025-04-25');
+INSERT INTO movie (idPelicula, title, originalTitle, originalLanguage, overview, posterPath, backdropPath, genreIds, popularity, adult, video, voteAverage, voteCount, releaseDate)
+VALUES
+(1124620, 'The Monkey', 'The Monkey', 'en', 'When twin brothers find a mysterious wind-up monkey, a series of outrageous deaths tear their family apart. Twenty-five years later, the monkey begins a new killing spree forcing the estranged brothers to confront the cursed toy.', '/yYa8Onk9ow7ukcnfp2QWVvjWYel.jpg', '/6dC7ULfiutxwEAs7LjWHL2Tc7Zv.jpg', '27,35', 180.498, false, false, 5.9, 575, '2025-02-14'),
+(1180906, 'Desert Dawn', 'Desert Dawn', 'en', 'A newly appointed small-town sheriff and his begrudging deputy get tangled up in a web of lies and corruption involving shady businessmen and the cartel while investigating the murder of a mysterious woman.', '/S21BfLrJSD9njucBfY3CKqp8rD.jpg', '/bFmziv84NfEVEGTK8c6EVY3bxve.jpg', '28,80,9648,53', 159.4082, false, false, 0, 0, '2025-05-15'),
+(1249213, 'Drop', 'Drop', 'en', 'Violet, a widowed mother on her first date in years, arrives at an upscale restaurant where she is relieved that her date, Henry, is more charming and handsome than she expected. But their chemistry begins to curdle as Violet begins being irritated and then terrorized by a series of anonymous drops to her phone.', '/dS2S5lpfgRIRQOb7LDCjNsQqKjp.jpg', '/2CcMG34v4PCynvxwmBUwVtNqsKL.jpg', '9648,53', 147.2047, false, false, 6.59, 251, '2025-04-10'),
+(1276073, 'Bullet Train Explosion', '新幹線大爆破', 'ja', 'When panic erupts on a Tokyo-bound bullet train that will explode if it slows below 100 kph, authorities race against time to save everyone on board.', '/uxYMN7egzwU9dQWmlm9tVTVpBbe.jpg', '/Zes06xI18u47pblwRGTtqRm0R8.jpg', '28,53,80,18', 147.0887, false, false, 6.9, 141, '2025-04-23'),
+(1092899, 'The Siege', 'The Siege', 'en', 'International assassin Walker is compromised during a mission and sent to a reassignment center for a new identity. During his stay at the facility, a ruthless assault team storms the compound searching for someone their boss has lost. Walker begrudgingly falls in with skilled hitwoman Elda and her mysterious ward Juliet in order to survive the night.', '/hVh4hMzkXNLnScudbid6hDvjMPk.jpg', '/4eC0tsU9OxR3Adlo1yRJYUDraW9.jpg', '28,53', 126.5375, false, false, 5.436, 47, '2023-03-10'),
+(1136721, 'The Glenarma Tapes', 'The Glenarma Tapes', 'en', 'In Spring 2020 when five students and two faculty members from the Mid Ulster College of Art go missing in a forest on the north coast of Ireland. What happened on the day they disappeared has remained a mystery - until now.', '/m0kojZkP1vcK9F8XSWfw9haJHKz.jpg', '/nyZjhvcmeXcr8H2Xx6JzKEAxPph.jpg', '27', 123.1562, false, false, 7.1, 7, '2024-04-02'),
+(1241982, 'Moana 2', 'Moana 2', 'en', 'After receiving an unexpected call from her wayfinding ancestors, Moana journeys alongside Maui and a new crew to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she\'s ever faced.', '/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg', '/vNUwK5P42m81uG57kKI1WxSZwIQ.jpg', '16,12,10751,35', 116.0136, false, false, 7.078, 2323, '2024-11-21'),
+(1403735, 'Laila', 'లైలా', 'te', 'Sonu Model, a renowned beautician from the old city, is forced to disguise himself as Laila, leading to a series of comedic, romantic, and action-packed events. Chaos ensues in this hilarious laugh riot', '/l4gsNxFPGpzbq0D6QK1a8vO1lBz.jpg', '/zo8CIjJ2nfNOevqNajwMRO6Hwka.jpg', '35,10749', 113.98, false, false, 5, 3, '2025-02-14');
+
